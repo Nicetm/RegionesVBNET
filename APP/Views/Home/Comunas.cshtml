@@ -1,0 +1,29 @@
+﻿@model List<WebApp.Models.Comuna>
+
+@{
+    ViewData["Title"] = "Comunas de la región";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Comuna</th>
+            <th>Superficie (km²)</th>
+            <th>Población</th>
+            <th>Densidad (hab/km²)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Superficie</td>
+                <td>@item.Poblacion</td>
+                <td>@item.Densidad</td>
+            </tr>
+        }
+    </tbody>
+</table>

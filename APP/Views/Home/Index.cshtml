@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApp.Models.Region>
+
+@{
+    ViewData["Title"] = "Regiones disponibles";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Región</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var region in Model)
+        {
+            <tr>
+                <td>@region.Nombre</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Comunas" asp-route-id="@region.IdRegion" class="btn btn-primary btn-sm">
+                        Ver comunas
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
